@@ -17,7 +17,7 @@
       button {
         font-family: "Roboto", sans-serif;
         font-weight: 900;
-        font-size: 10rem;
+        font-size: 8rem;
         padding: 30px 70px;
         background-color: #007bff;
         color: white;
@@ -29,24 +29,32 @@
         margin-left: 25px;
       }
     </style>
-    <script>
-      let likes = 0;
-      document.addEventListener("DOMContentLoaded", function () {
-        const button = document.querySelector("button");
-        const span = document.querySelector("span");
-        button.addEventListener("click", function () {
-          likes += 1;
-          if (likes > 0) {
-            button.innerHTML = `🔥 Likes ${likes}`;
-          }
-          span.innerHTML = likes;
-        });
-      });
-    </script>
   </head>
   <body>
-    <div>
-      <button>🔥 Like<span>0</span></button>
-    </div>
+    <script>
+      const likeButton = () => {
+        const id = Math.random().toString(36).substr(2, 9);
+        let likes = 0;
+        const body = document.querySelector("body");
+
+        body.insertAdjacentHTML(
+          "beforeend",
+          `<button class="${id}">🔥 Like <span class="${id}">0</span></button>`
+        );
+
+        const button = document.querySelector(`.${id}`);
+        const span = document.querySelector(`.${id}`);
+
+        button.addEventListener("click", () => {
+          likes += 1;
+          if (likes > 0) {
+            button.innerHTML = `🔥 Likes <span class="${id}">${likes}</span>`;
+          }
+        });
+      };
+
+      likeButton();
+      likeButton();
+    </script>
   </body>
 </html>
