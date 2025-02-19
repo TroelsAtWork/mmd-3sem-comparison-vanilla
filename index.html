@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparison Vanilla and Next: Like button</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      button {
+        font-family: "Roboto", sans-serif;
+        font-weight: 900;
+        font-size: 10rem;
+        padding: 30px 70px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 250px;
+        cursor: pointer;
+      }
+      span {
+        margin-left: 25px;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const button = document.querySelector("button");
+        const span = document.querySelector("span");
+        button.addEventListener("click", function () {
+          span.innerHTML = parseInt(span.innerHTML) + 1;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button>🔥<span>1231</span></button>
+  </body>
+</html>
