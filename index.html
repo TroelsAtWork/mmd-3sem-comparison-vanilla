@@ -37,18 +37,15 @@
         let likes = 0;
         const body = document.querySelector("body");
 
-        body.insertAdjacentHTML(
-          "beforeend",
-          `<button class="${id}">🔥 Like <span class="${id}">0</span></button>`
-        );
+        const buttonElement = document.createElement("button");
+        buttonElement.className = id;
+        buttonElement.innerHTML = `🔥 Like <span class="${id}">0</span>`;
+        body.appendChild(buttonElement);
 
-        const button = document.querySelector(`.${id}`);
-        const span = document.querySelector(`.${id}`);
-
-        button.addEventListener("click", () => {
+        buttonElement.addEventListener("click", () => {
           likes += 1;
           if (likes > 0) {
-            button.innerHTML = `🔥 Likes <span class="${id}">${likes}</span>`;
+            buttonElement.innerHTML = `🔥 Likes <span class="${id}">${likes}</span>`;
           }
         });
       };
