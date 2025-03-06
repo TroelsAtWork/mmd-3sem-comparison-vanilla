@@ -39,18 +39,17 @@
 
         const buttonElement = document.createElement("button");
         buttonElement.className = id;
-        buttonElement.innerHTML = `🔥 Like <span class="${id}">0</span>`;
+        buttonElement.innerHTML = `🔥 Like <span class="${id}"></span>`;
         body.appendChild(buttonElement);
 
         buttonElement.addEventListener("click", () => {
           likes += 1;
-          if (likes > 0) {
+          if (likes != "") {
             buttonElement.innerHTML = `🔥 Likes <span class="${id}">${likes}</span>`;
           }
         });
       };
 
-      likeButton();
       likeButton();
     </script>
   </body>
