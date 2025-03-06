@@ -36,10 +36,11 @@
         const span = document.querySelector("span");
         button.addEventListener("click", function () {
           likes += 1;
-          if (likes > 0) {
+          if (likes <= 1) {
+            button.innerHTML = `🔥 Like ${likes}`;
+          } else {
             button.innerHTML = `🔥 Likes ${likes}`;
           }
-          span.innerHTML = likes;
         });
       });
     </script>
