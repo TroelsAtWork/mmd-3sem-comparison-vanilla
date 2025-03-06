@@ -44,7 +44,9 @@
 
         buttonElement.addEventListener("click", () => {
           likes += 1;
-          if (likes != "") {
+          if (likes <= 1) {
+            buttonElement.innerHTML = `🔥 Like <span class="${id}">${likes}</span>`;
+          } else {
             buttonElement.innerHTML = `🔥 Likes <span class="${id}">${likes}</span>`;
           }
         });
