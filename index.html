@@ -34,7 +34,7 @@
       document.addEventListener("DOMContentLoaded", () => {
         const button = document.querySelector("button");
         button.addEventListener("click", function () {
-          likes += 1;
+          likes = likes + 1;
           if (likes <= 1) {
             button.innerHTML = `🔥 Like ${likes}`;
           } else {
