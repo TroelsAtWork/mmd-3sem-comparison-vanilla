@@ -34,24 +34,25 @@
     <script>
       const likeButton = () => {
         const body = document.querySelector("body");
-        const id = Math.random().toString(36).substr(2, 9);
+        //const id = Math.random().toString(36).substr(2, 9);
         let likes = 0;
 
         const buttonElement = document.createElement("button");
-        buttonElement.className = id;
-        buttonElement.innerHTML = `🔥 Like <span class="${id}"></span>`;
+        buttonElement.innerHTML = `🔥 Like`;
         body.appendChild(buttonElement);
 
         buttonElement.addEventListener("click", () => {
           likes += 1;
           if (likes <= 1) {
-            buttonElement.innerHTML = `🔥 Like <span class="${id}">${likes}</span>`;
+            buttonElement.innerHTML = `🔥 Like <span>${likes}</span>`;
           } else {
-            buttonElement.innerHTML = `🔥 Likes <span class="${id}">${likes}</span>`;
+            buttonElement.innerHTML = `🔥 Likes <span>${likes}</span>`;
           }
         });
       };
 
+      likeButton();
+      likeButton();
       likeButton();
     </script>
   </body>
