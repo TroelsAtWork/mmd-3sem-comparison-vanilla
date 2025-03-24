@@ -30,8 +30,8 @@
       }
     </style>
     <script>
-      let likes = 0;
       document.addEventListener("DOMContentLoaded", () => {
+        let likes = 0;
         const button = document.querySelector("button");
         button.addEventListener("click", function () {
           likes = likes + 1;
@@ -41,10 +41,12 @@
             button.innerHTML = `🔥 Likes ${likes}`;
           }
         });
+        document.querySelector(".rerenders").innerHTML = likes;
       });
     </script>
   </head>
   <body>
     <button>🔥 Like</button>
+    <div class="rerenders"></div>
   </body>
 </html>
