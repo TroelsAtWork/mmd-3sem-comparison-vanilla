@@ -41,7 +41,7 @@
         body.appendChild(buttonElement);
 
         buttonElement.addEventListener("click", () => {
-          likes += 1;
+          likes = likes + 1;
           if (likes <= 1) {
             buttonElement.innerHTML = `🔥 Like <span>${likes}</span>`;
           } else {
