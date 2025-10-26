@@ -31,14 +31,16 @@
     </style>
   </head>
   <body>
+    <div class="one"></div>
+    <div class="two"></div>
     <script>
-      const likeButton = () => {
-        const body = document.querySelector("body");
+      const likeButton = (selector) => {
+        const element = document.querySelector(selector);
         let likes = 0;
 
         const buttonElement = document.createElement("button");
         buttonElement.innerHTML = `🔥 Like`;
-        body.appendChild(buttonElement);
+        element.appendChild(buttonElement);
 
         buttonElement.addEventListener("click", () => {
           likes = likes + 1;
@@ -50,8 +52,8 @@
         });
       };
 
-      likeButton();
-      likeButton();
+      likeButton(".one");
+      likeButton(".two");
     </script>
   </body>
 </html>
